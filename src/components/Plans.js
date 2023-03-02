@@ -72,11 +72,8 @@ const Plans = function ({ plans }) {
         <div className="toggle-plans">
           <p>Monthly</p>
 
-          <div>
-            <button
-              className={yearlyClassList}
-              onClick={toggleYearlyPlan}
-            ></button>
+          <div onClick={toggleYearlyPlan}>
+            <button className={yearlyClassList}></button>
           </div>
 
           <p>Yearly</p>
