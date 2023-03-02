@@ -1,0 +1,77 @@
+.addons {
+  position: relative;
+}
+
+.addons-list {
+  @include flex-col;
+  gap: 20px;
+}
+
+.addons-show {
+  border: $cool-gray 1px solid;
+  border-radius: 10px;
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  transition-property: border background-color;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $purplish-blue;
+    cursor: pointer;
+  }
+
+  div {
+    @include flex-row;
+    align-items: center;
+  }
+}
+
+.addons-show-active {
+  border-color: $purplish-blue;
+  background-color: $magnolia;
+}
+
+.addons-check {
+  border: $cool-gray 1px solid;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  margin-right: 30px;
+}
+
+.addons-check-active {
+  border: none;
+  background-color: $purplish-blue;
+  background-image: url('../images/icon-checkmark.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.addons-show-content {
+  @include flex-col;
+  justify-content: flex-start;
+  line-height: 1.5;
+  text-align: left;
+
+  h3 {
+    color: $marine-blue;
+    font-size: medium;
+    width: 100%;
+  }
+
+  p {
+    color: $cool-gray;
+    font-size: smaller;
+  }
+}
+
+.addons-price {
+  color: $purplish-blue;
+}
+
+.addons-button-container {
+  @include btn-container;
+  @include media-button;
+}

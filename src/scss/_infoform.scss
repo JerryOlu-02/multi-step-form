@@ -1,0 +1,102 @@
+.info-form > div,
+.plans-header,
+.addons-header,
+.summary-header {
+  line-height: 1.5;
+
+  h2 {
+    color: $marine-blue;
+    font-size: 28px;
+  }
+
+  p {
+    color: $cool-gray;
+  }
+}
+
+.info-form > form {
+  @include flex-col;
+  gap: 20px;
+  height: 100%;
+  position: relative;
+
+  div {
+    @include flex-col;
+    line-height: 1.8;
+    position: relative;
+
+    label {
+      color: $marine-blue;
+      font-size: small;
+      font-weight: 500;
+    }
+
+    .error-label {
+      color: $strawberry-red;
+      position: absolute;
+      right: 0;
+      font-weight: 550;
+      opacity: 0.8;
+    }
+
+    input {
+      min-height: 2.5rem;
+      border: $light-gray 1px solid;
+      border-radius: 5px;
+      padding-left: 15px;
+      color: $marine-blue;
+      font-weight: 550;
+      transition: border 0.3s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        border: $purplish-blue 1px solid;
+      }
+
+      &:focus {
+        outline: none;
+        border: $purplish-blue 1px solid;
+      }
+
+      &::placeholder {
+        color: $cool-gray;
+        font-weight: 550;
+      }
+    }
+
+    .error-input {
+      border: $strawberry-red 1px solid;
+
+      &:focus {
+        outline: none;
+        border: $strawberry-red 1px solid;
+      }
+    }
+  }
+}
+
+.form-button-div {
+  @include media-button;
+  align-self: flex-end;
+
+  button {
+    border: none;
+    border-radius: 5px;
+    background-color: $marine-blue;
+    color: $white;
+    width: 7rem;
+    min-height: 2.5rem;
+
+    transition: opacity 0.3s ease-in-out;
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}

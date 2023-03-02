@@ -1,0 +1,78 @@
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+}
+
+@mixin flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin btn-container {
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  // margin-top: 50px;
+
+  p {
+    color: $cool-gray;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $marine-blue;
+      cursor: pointer;
+    }
+  }
+
+  button {
+    min-height: 2.5rem;
+    background-color: $marine-blue;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    width: 7rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin media-padding {
+  @media (max-width: 1088px) {
+    padding: 30px 50px 20px;
+  }
+}
+
+@mixin media-app-phone {
+  @media (max-width: 990px) {
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: $light-gray 0px 4px 12px;
+
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 20vh;
+    padding: 20px;
+  }
+}
+
+@mixin media-button {
+  @media (max-width: 990px) {
+    min-height: 5rem;
+    background-color: $white;
+
+    position: absolute;
+    top: 120%;
+    left: -10%;
+    width: 120%;
+    padding: 15px 10%;
+  }
+}

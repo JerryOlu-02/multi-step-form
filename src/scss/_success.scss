@@ -1,0 +1,22 @@
+.success-container {
+  @include flex-col;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+
+  h2 {
+    color: $marine-blue;
+  }
+
+  p {
+    color: $cool-gray;
+  }
+}
+
+@media (max-width: 990px) {
+  .success-container {
+    padding: 10%;
+    min-height: 60vh;
+  }
+}

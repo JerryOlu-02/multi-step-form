@@ -1,0 +1,127 @@
+.plans {
+  position: relative;
+}
+
+.plans-container {
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+.plans-parent {
+  @include flex-col;
+  gap: 30px;
+}
+
+.plans-card {
+  @include flex-col;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+  border: $light-gray 1px solid;
+  gap: 40px;
+
+  transition-property: border background-color;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $purplish-blue;
+  }
+
+  div {
+    line-height: 1.5;
+
+    h3 {
+      color: $marine-blue;
+      font-size: medium;
+    }
+
+    p {
+      font-size: small;
+      color: $cool-gray;
+    }
+
+    p:last-of-type {
+      font-size: smaller;
+      color: $marine-blue;
+    }
+  }
+}
+
+.plans-card-active {
+  background-color: $magnolia;
+  border-color: $purplish-blue;
+}
+
+.toggle-plans {
+  border-radius: 10px;
+  min-height: 2.5rem;
+  background-color: $magnolia;
+  @include flex-row-center;
+  gap: 30px;
+
+  p {
+    color: $marine-blue;
+    font-weight: 500;
+  }
+
+  p:last-of-type {
+    color: $cool-gray;
+  }
+
+  div {
+    background-color: $marine-blue;
+    border-radius: 20px;
+    width: 2.5rem;
+    height: 20px;
+    position: relative;
+
+    button {
+      height: 14px;
+      width: 0.8rem;
+      border-radius: 50%;
+      border: none;
+      background-color: $alabaster;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      transition: left 0.3s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .btn-active {
+      left: 24.2px;
+    }
+  }
+}
+
+.button-container {
+  @include btn-container;
+  @include media-button;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 90px 10px;
+}
+
+@media (max-width: 990px) {
+  .plans-container {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: unset;
+    row-gap: 10px;
+  }
+
+  .plans-card {
+    flex-direction: row;
+    justify-content: unset;
+    gap: 15px;
+  }
+}

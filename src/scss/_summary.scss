@@ -1,0 +1,99 @@
+.summary {
+  position: relative;
+}
+
+.summary-container {
+  background-color: $magnolia;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.selected-plan-container {
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px $light-gray solid;
+
+  div {
+    line-height: 1.5;
+    h3 {
+      font-size: 14px;
+      color: $marine-blue;
+    }
+
+    p {
+      color: $cool-gray;
+      font-size: small;
+      font-weight: lighter;
+      text-decoration: underline;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $purplish-blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+  p {
+    color: $marine-blue;
+    font-weight: 700;
+  }
+}
+
+.addon-container {
+  @include flex-col;
+  padding-top: 20px;
+  gap: 20px;
+
+  div {
+    @include flex-row;
+    justify-content: space-between;
+
+    font-size: 14px;
+    p:first-child {
+      color: $cool-gray;
+    }
+
+    p:nth-child(2) {
+      color: $marine-blue;
+      font-weight: 500;
+    }
+  }
+}
+
+.total-price-container {
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: $cool-gray;
+    font-size: 14px;
+  }
+
+  h3 {
+    color: $purplish-blue;
+    font-weight: 700;
+  }
+}
+
+.summary-button-container {
+  @include btn-container;
+  @include media-button;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 90px;
+
+  button {
+    background-color: $purplish-blue;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

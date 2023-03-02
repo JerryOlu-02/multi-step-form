@@ -1,0 +1,65 @@
+.sidebar {
+  background-image: url('../images/bg-sidebar-desktop.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 25%;
+  border-radius: 10px;
+  padding: 35px 0 0 30px;
+
+  @include flex-col;
+  gap: 30px;
+}
+
+.sidebar-div {
+  @include flex-row;
+  gap: 15px;
+}
+
+.sidebar-number {
+  color: $white;
+  width: 30px;
+  height: 30px;
+  @include flex-row-center;
+  border-radius: 50%;
+  border: 1px solid $white;
+  transition: background-color 0.3s ease-in;
+}
+
+.active-sidebar {
+  background-color: $light-blue;
+  color: $marine-blue;
+  border: none;
+}
+
+.sidebar-content {
+  color: $white;
+  @include flex-col;
+  justify-content: space-between;
+
+  p {
+    color: $light-gray;
+    font-size: 12px;
+  }
+
+  h4 {
+    font-size: smaller;
+  }
+}
+
+@media (max-width: 990px) {
+  .sidebar {
+    background-image: url(../images/bg-sidebar-mobile.svg);
+    background-size: calc(100%);
+    background-position: center;
+    border-radius: 0;
+    width: 100%;
+
+    flex-direction: row;
+    justify-content: center;
+    min-height: 30vh;
+  }
+
+  .sidebar-content {
+    display: none;
+  }
+}
